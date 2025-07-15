@@ -17650,7 +17650,7 @@
   downloadButton.innerText = 'Download Data';
   Object.assign(downloadButton.style, {
     position: 'fixed',
-    bottom: '10px',
+    bottom: '50px',
     left: '10px',
     zIndex: '1000',
     padding: '10px 15px',
@@ -17681,7 +17681,7 @@
   importButton.innerText = 'Import Data';
   Object.assign(importButton.style, {
     position: 'fixed',
-    bottom: '50px',
+    bottom: '10px',
     left: '10px',
     zIndex: '1000',
     padding: '10px 15px',
