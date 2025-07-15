@@ -17646,6 +17646,46 @@
 })();
 
 const button = document.createElement('button');
+button.innerText = 'Download Data';
+
+button.style.position = 'fixed';
+button.style.bottom = '10px';
+button.style.left = '10px';
+button.style.zIndex = '1000';
+button.style.padding = '10px 15px';
+button.style.backgroundColor = '#007BFF';
+button.style.color = 'white';
+button.style.border = 'none';
+button.style.borderRadius = '5px';
+button.style.cursor = 'pointer';
+
+document.body.appendChild(button);
+
+button.addEventListener('click', () => {
+  const data = localStorage.getItem('userStats');
+
+  if (!data) {
+    alert('No data found in localStorage under the key "userStats"!');
+    return;
+  }
+
+  const blob = new Blob([data], { type: 'application/json' });
+
+  const link = document.createElement('a');
+
+  link.download = 'userStats.json';
+
+  link.href = URL.createObjectURL(blob);
+
+  document.body.appendChild(link);
+
+  link.click();
+
+  document.body.removeChild(link);
+});
+
+
+const button = document.createElement('button');
 button.innerText = 'Import Data';
 
 button.style.position = 'fixed';
